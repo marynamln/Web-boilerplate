@@ -1,22 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
 
-   <head itemscope itemtype="http://schema.org/WebSite">
+   <head>
 
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="msapplication-tap-highlight" content="no">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>Project</title>
+      <title>Teachinder</title>
 
       <link rel="stylesheet" href="./css/app.css">
 
    </head>
 
-   <body itemscope itemtype="http://schema.org/WebPage">
+   <body>
 
       <script type="text/javascript" src="../build/app.js"></script>
+
+      <header class="header">
+         <div class="searchPanel">
+            <div class="logotype"><span class="nameLogo">Teachinder</span></div>
+            <div class="searchTeacher">
+               <input class="searchInput" type="text" placeholder="Name, note or age to search"/>
+               <button class="searchButton">Search</button>
+            </div>
+         </div>
+
+         <nav class="menuPanel">
+            <div class="menu">
+               <ul class="menuList">
+                  <li class="menuItem">
+                     <a class="menuLink">Teachers</a>
+                  </li>
+                  <li class="menuItem">
+                     <a class="menuLink">Statistics</a>
+                  </li>
+                  <li class="menuItem">
+                     <a class="menuLink">Favorites</a>
+                  </li>
+                  <li class="menuItem">
+                     <a class="menuLink">About</a>
+                  </li>
+               </ul>
+            </div>
+            <button class="addTeacherButton">Add teacher</button>
+         </nav>
+      </header>
+
+      <main class="main">
+         <section class="section" id="topTeachers">
+
+            <div class="line"></div>
+            <h1 class="title">Top teachers</h1>
+
+            <div class="filters">
+               <div class="filter">
+                  <label for="selectAge" id="selectLabel">Age</label>
+                  <select class="select" id="selectAge">
+                     <option value="18-31" selected>18 - 31</option>
+                     <option value="32-45">32 - 45</option>
+                     <option value="45-55">45 - 55</option>
+                     <option value="55-65">55 - 65</option>
+                  </select>
+               </div>
+
+               <div class="filter">
+                  <label for="selectRegion" id="selectLabel">Region</label>
+                  <select class="select" id="selectRegion">
+                     <option value="Europe" selected>Europe</option>
+                     <option value="Asia">Asia</option>
+                     <option value="Africa">Africa</option>
+                     <option value="Australia">Australia</option>
+                  </select>
+               </div>
+
+               <div class="filter">
+                  <label for="selectSex" id="selectLabel">Sex</label>
+                  <select class="select" id="selectSex">
+                     <option value="male" selected>Male</option>
+                     <option value="female">Female</option>
+                  </select>
+               </div>
+
+               <div class="filter">
+                  <input class="checkbox" id="checkboxPhoto" type="checkbox">
+						<label for="checkboxPhoto" class="checkboxLabel" id="selectLabel">Only with photo</label>
+               </div>
+
+               <div class="filter">
+                  <input class="checkbox" id="checkboxFavorites" type="checkbox">
+						<label for="checkboxFavorites" class="checkboxLabel" id="selectLabel">Only favorites</label>
+               </div>
+            </div>
+         </section>
+
+         <section class="section" id="topTeachersList">
+            <ul class="teachers">
+
+               <li class="teacherCard">
+                  <div class="avatar">
+                     <div class="avatarImg">
+                        <img src="\images\1.jpg" alt="J.D">
+                        <div class="initials">J.D</div>
+                     </div>
+                  </div>
+                  <h3 class="teachersName">John<br>Doe</h3>
+                  <h4 class="teachersSpeciality">Chemistry</h4>
+                  <h5 class="teachersCountry">USA</h5>
+               </li>
+
+               <li class="teacherCard">
+                  <div class="avatar">
+                     <div class="avatarImg">
+                        <img src="\images\3.jpg" alt="A.S">
+                        <div class="initials">A.S</div>
+                     </div>
+                  </div>
+                  <h3 class="teachersName">Anna<br>Smith</h3>
+                  <h4 class="teachersSpeciality">Physics</h4>
+                  <h5 class="teachersCountry">UK</h5>
+               </li>
+
+               <li class="teacherCard" id="stared">
+                  <div class="avatar">
+                     <div class="avatarImg">
+                        <img src="\images\4.jpg" alt="E.J">
+                        <div class="initials">E.J</div>
+                     </div>
+                     <span class="star">★</span>
+                  </div>
+                  <h3 class="teachersName">Emily<br>Johnson</h3>
+                  <h4 class="teachersSpeciality">Math</h4>
+                  <h5 class="teachersCountry">Canada</h5>
+               </li>
+
+               <li class="teacherCard">
+                  <div class="avatar">
+                     <div class="avatarImg">
+                        <img src="\images\5.jpg" alt="S.F">
+                        <div class="initials">S.F</div>
+                     </div>
+                  </div>
+                  <h3 class="teachersName">Sofia<br>Fernandez</h3>
+                  <h4 class="teachersSpeciality">Art</h4>
+                  <h5 class="teachersCountry">Argentina</h5>
+               </li>
+
+               <li class="teacherCard" id="stared">
+                  <div class="avatar">
+                     <div class="avatarImg">
+                        <img src="\images\2.jpg" alt="K.P">
+                        <div class="initials">K.P</div>
+                     </div>
+                     <span class="star">★</span>
+                  </div>
+                  <h3 class="teachersName">Kumar<br>Patel</h3>
+                  <h4 class="teachersSpeciality">Biology</h4>
+                  <h5 class="teachersCountry">India</h5>
+               </li>
+
+               <li class="teacherCard">
+                  <div class="avatar">
+                     <div class="avatarImg">
+                        <img src="\images\6.jpg" alt="M.G">
+                        <div class="initials">M.G</div>
+                     </div>
+                  </div>
+                  <h3 class="teachersName">Maria<br>Garcia</h3>
+                  <h4 class="teachersSpeciality">Art</h4>
+                  <h5 class="teachersCountry">Spain</h5>
+               </li>
+
+               <li class="teacherCard">
+                  <div class="avatar">
+                     <div class="avatarImg">
+                        <img src="" alt="L.W">
+                        <div class="initials">L.W</div>
+                     </div>
+                  </div>
+                  <h3 class="teachersName">Li<br>Wei</h3>
+                  <h4 class="teachersSpeciality">English</h4>
+                  <h5 class="teachersCountry">China</h5>
+               </li>
+
+               <li class="teacherCard">
+                  <div class="avatar">
+                     <div class="avatarImg">
+                        <img src="" alt="Y.A">
+                        <div class="initials">Y.A</div>
+                     </div>
+                  </div>
+                  <h3 class="teachersName">Yusuf<br>Ali</h3>
+                  <h4 class="teachersSpeciality">Computer Science</h4>
+                  <h5 class="teachersCountry">Turkey</h5>
+               </li>
+            </ul>
+         </section>
+
+         <section class="section" id="statistics">
+            
+            <div class="line"></div>
+            <h1 class="title">Statistics</h1>
+
+            <div class="content">
+               <div class="statisticsTable">
+                  <table class="table">
+                     <thead>
+                        <tr>
+                           <th class="t-name" id="t-title">Name</th>
+                           <th>Speciality</th>
+                           <th>Age</th>
+                           <th>Gender</th>
+                           <th>Nationality</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="t-name">John Doe</td>
+                           <td class="t-speciality">Chemistry</td>
+                           <td class="t-age">29</td>
+                           <td class="t-gender">Male</td>
+                           <td class="t-nationality">USA</td>
+                       </tr>
+                       <tr>
+                           <td class="t-name">Anna Smith</td>
+                           <td class="t-speciality">Physics</td>
+                           <td class="t-age">25</td>
+                           <td class="t-gender">Female</td>
+                           <td class="t-nationality">UK</td>
+                       </tr>
+                       <tr>
+                           <td class="t-name">Li Wei</td>
+                           <td class="t-speciality">English</td>
+                           <td class="t-age">32</td>
+                           <td class="t-gender">Male</td>
+                           <td class="t-nationality">China</td>
+                       </tr>
+                       <tr>
+                           <td class="t-name">Maria Garcia</td>
+                           <td class="t-speciality">Art</td>
+                           <td class="t-age">40</td>
+                           <td class="t-gender">Female</td>
+                           <td class="t-nationality">Spain</td>
+                       </tr>
+                       <tr>
+                           <td class="t-name">Yusuf Ali</td>
+                           <td class="t-speciality">Computer Science</td>
+                           <td class="t-age">35</td>
+                           <td class="t-gender">Male</td>
+                           <td class="t-nationality">Turkey</td>
+                       </tr>
+                       <tr>
+                           <td class="t-name">Emily Johnson</td>
+                           <td class="t-speciality">Math</td>
+                           <td class="t-age">28</td>
+                           <td class="t-gender">Female</td>
+                           <td class="t-nationality">Canada</td>
+                       </tr>
+                       <tr>
+                           <td class="t-name">David Brown</td>
+                           <td class="t-speciality">Statistics</td>
+                           <td class="t-age">45</td>
+                           <td class="t-gender">Male</td>
+                           <td class="t-nationality">Australia</td>
+                       </tr>
+                       <tr>
+                           <td class="t-name">Sofia Fernandez</td>
+                           <td class="t-speciality">Art</td>
+                           <td class="t-age">30</td>
+                           <td class="t-gender">Female</td>
+                           <td class="t-nationality">Argentina</td>
+                       </tr>
+                       <tr>
+                           <td class="t-name">Kumar Patel</td>
+                           <td class="t-speciality">Biology</td>
+                           <td class="t-age">37</td>
+                           <td class="t-gender">Male</td>
+                           <td class="t-nationality">India</td>
+                       </tr>
+                       <tr>
+                           <td class="t-name">Maryna Melnyk</td>
+                           <td class="t-speciality">IT</td>
+                           <td class="t-age">18</td>
+                           <td class="t-gender">Female</td>
+                           <td class="t-nationality">Ukraine</td>
+                       </tr>
+                     </tbody>
+                  </table>
+
+                  <div class="pagination">
+                     <a href="" class="page-link" id="first">1</a>
+                     <a href="" class="page-link">2</a>
+                     <a href="" class="page-link">3</a>
+                     <span class="dots">...</span>
+                     <a href="" class="page-link">Last</a>
+                 </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="section" id="favorites">
+            <div class="line"></div>
+            <h1 class="title">Favorites</h1>
+            
+            <div class="content">
+               <div class="slider">
+                  <div class="sliderPrev">
+                     <button class="prevBtn">⟨</button>
+                  </div>
+
+                  <div class="sliderBody">
+                     <ul class="teachers" id="favoriteTeachersList">
+                        <li class="teacherCardFavorite">
+                           <div class="avatar">
+                              <div class="avatarImg">
+                                 <img src="\images\1.jpg" alt="J.D">
+                                 <div class="initials">J.D</div>
+                              </div>
+                           </div>
+                           <h3 class="teachersName">John<br>Doe</h3>
+                           <h5 class="teachersCountry">USA</h5>
+                        </li>
+         
+                        <li class="teacherCardFavorite">
+                           <div class="avatar">
+                              <div class="avatarImg">
+                                 <img src="\images\3.jpg" alt="A.S">
+                                 <div class="initials">A.S</div>
+                              </div>
+                           </div>
+                           <h3 class="teachersName">Anna<br>Smith</h3>
+                           <h5 class="teachersCountry">UK</h5>
+                        </li>
+         
+                        <li class="teacherCardFavorite">
+                           <div class="avatar">
+                              <div class="avatarImg">
+                                 <img src="\images\4.jpg" alt="E.J">
+                                 <div class="initials">E.J</div>
+                              </div>
+                           </div>
+                           <h3 class="teachersName">Emily<br>Johnson</h3>
+                           <h5 class="teachersCountry">Canada</h5>
+                        </li>
+         
+                        <li class="teacherCardFavorite">
+                           <div class="avatar">
+                              <div class="avatarImg">
+                                 <img src="\images\5.jpg" alt="S.F">
+                                 <div class="initials">S.F</div>
+                              </div>
+                           </div>
+                           <h3 class="teachersName">Sofia<br>Fernandez</h3>
+                           <h5 class="teachersCountry">Argentina</h5>
+                        </li>
+         
+                        <li class="teacherCardFavorite">
+                           <div class="avatar">
+                              <div class="avatarImg">
+                                 <img src="\images\2.jpg" alt="K.P">
+                                 <div class="initials">K.P</div>
+                              </div>
+                           </div>
+                           <h3 class="teachersName">Kumar<br>Patel</h3>
+                           <h5 class="teachersCountry">India</h5>
+                        </li>
+
+                     </ul>
+                  </div>
+                  <div class="sliderNext">
+                     <button class="nextBtn">⟩</button>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="section" id="about">
+            
+            <div class="line"></div>
+            
+            <div class="content">
+               <div class="description">
+                  <p class="paragraph">
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla hendrerit, semper sem sed, egestas eros. Cras hendrerit porta lorem sit amet lobortis. Praesent at libero aliquam, placerat elit at, eleifend neque. Duis quis enim commodo, venenatis justo ac, iaculis arcu. Nam scelerisque magna id varius scelerisque. Vivamus tincidunt diam eget tempor condimentum. Nunc rhoncus purus varius ullamcorper interdum.
+                  </p>
+                  <p class="paragraph">
+                     Aliquam elementum enim lorem, eget dapibus lectus egestas id. In at condimentum velit. Integer et aliquam ligula, eu luctus odio.
+                  </p>
+                  <p class="paragraph">
+                     Maecenas sed odio et orci rutrum iaculis. Mauris ut lorem quis justo fringilla pulvinar.
+                  </p>
+               </div>
+            </div>
+         </section>         
+      </main>
+
+      <footer class="footer">
+         <nav class="menuPanel" id="footerMenu">
+            <div class="menu">
+               <ul class="menuList">
+                  <li class="menuItem">
+                     <a class="menuLink">Teachers</a>
+                  </li>
+                  <li class="menuItem">
+                     <a class="menuLink">Statistics</a>
+                  </li>
+                  <li class="menuItem">
+                     <a class="menuLink">Favorites</a>
+                  </li>
+                  <li class="menuItem">
+                     <a class="menuLink">About</a>
+                  </li>
+               </ul>
+            </div>
+            <button class="addTeacherButton">Add teacher</button>
+         </nav>
+      </footer>
+
+      <dialog class="popup" id="createTeacher">
+         <div class="topForm">
+            <span class="formTitle">Add Teacher</span>
+            <div class="close">✖</div>
+         </div>
+
+         <div class="teacherForm">
+
+            <form class="form">
+               <div class="formItem">
+                  <label for="formName" class="formLabel">Name</label>
+                  <input id="formName" class="formInput" placeholder="Enter name" type="text">
+               </div>
+               <div class="formItem">
+                  <label for="formSpeciality" class="formLabel">Speciality</label>
+                  <select id="formSpeciality" class="formInput">
+                     <option value="Mathematics" selected>Mathematics</option>
+                     <option value="Biology">Biology</option>
+                     <option value="Art">Art</option>
+                     <option value="Physics">Physics</option>
+                  </select>
+               </div>
+
+               <div class="columns">
+                  <div class="formItem">
+                     <label for="formCountry" class="formLabel">Country</label>
+                     <select id="formCountry" class="formInput">
+                        <option value="Ukraine" selected>Ukraine</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Spain">Spain</option>
+                     </select>
+                  </div>
+                  <div class="formItem">
+                     <label for="formCity" class="formLabel">City</label>
+                     <input id="formCity" class="formInput" type="text">
+                  </div>
+                  <div class="formItem">
+                     <label for="formEmail" class="formLabel">Email</label>
+                     <input id="formEmail" class="formInput" type="email">
+                  </div>
+                  <div class="formItem">
+                     <label for="formPhone" class="formLabel">Phone</label>
+                     <input id="formPhone" class="formInput" type="tel">
+                  </div>
+               </div>
+
+               <div class="formItem">
+                  <label for="formDate" class="formLabel">Date of birth</label>
+                  <input id="formDate" class="formInput" type="date">
+               </div>
+
+               <div class="formItem" id="sex">
+                  <label class="formLabel">Sex</label>
+                  
+                  <div class="radioGroup">
+                     <label for="formSexMale" class="radioLabel">Male</label>
+                     <input id="formSexMale" class="radioInput" type="radio" value="Male"> 
+                     <label for="formSexFemale" class="radioLabel">Female</label>
+                     <input id="formSexFemale" class="radioInput" type="radio" value="Female">
+                  </div>
+                   
+               </div>
+               <div class="formItem" id="backgroung">
+                  <label for="formBackgroung" class="formLabel">Backgroung color</label>
+                  <input id="formBackgroung" class="formInput" type="color">
+               </div>
+               <div class="formItem" id="notes">
+                  <label for="formNotes" class="formLabel">Notes (optional)</label>
+                  <input id="formNotes" class="formInput" type="text">
+               </div>
+
+               <button class="formButton">Add</button>
+            </form>
+         </div>
+      </dialog>
+
+      <dialog class="popup" id="infoTeacher">
+         <div class="topForm">
+            <span class="formTitle">Teacher Info</span>
+            <div class="closeInfo">✖</div>
+         </div>
+
+         <div class="information">
+
+            <div class="topInfo">
+               
+               <img class="teacherPhoto" src="\images\1.jpg" alt="J.D">               
+   
+               <div class="teacherInformation">
+                  <h1 class="teacherName">John Doe</h1>
+                  <h2 class="teacherSpeciality">Chemistry</h2>
+                  <span class="teacherCountry">USA</span>
+                  <span class="teacherAge">29, Male</span>
+                  <a class="teacherEmail" href="">johndoe@gmail.com</a>
+                  <span class="teacherTel">+1234567890</span>
+               </div>
+
+               <button class="t-star">☆</button>
+            </div>
+            
+            <div class="bottomInfo">
+               <span class="infoDescription">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla hendrerit, semper sem sed, egestas eros. Cras hendrerit porta lorem sit amet lobortis. Praesent at libero aliquam, placerat elit at, eleifend neque. Duis quis enim commodo, venenatis justo ac, iaculis arcu. Nam scelerisque magna id varius scelerisque. Vivamus tincidunt diam eget tempor condimentum. Nunc rhoncus purus varius ullamcorper interdum.
+               </span>
+   
+               <a class="map" href="">toggle map</a>
+            </div>
+            
+         </div>
+      </dialog>
       
+      <script>
+         const addTeacherButton = document.querySelector('.addTeacherButton');
+         const createTeacherDialog = document.querySelector('#createTeacher');
+         const closeButton = document.querySelector('.close');
+      
+         addTeacherButton.addEventListener('click', () => {
+            createTeacherDialog.showModal();
+         });
+      
+         closeButton.addEventListener('click', () => {
+            createTeacherDialog.close();
+         });
+      </script>
+
+      <script>
+         const teacherCard = document.querySelector('.teacherCard');
+         const infoTeacherDialog = document.querySelector('#infoTeacher');
+         const closeInfoButton = document.querySelector('.closeInfo');
+
+         teacherCard.addEventListener('click', () => {
+            infoTeacherDialog.showModal();
+         });
+
+         closeInfoButton.addEventListener('click', () => {
+            infoTeacherDialog.close();
+         });
+
+      </script>
+
   </body>
 </html>
