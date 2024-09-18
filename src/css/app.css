@@ -537,6 +537,7 @@ th:hover::after {
 
     .filter {
         padding-right: 0;
+        margin-bottom: 5px;
     }
 
     .filter:not(:last-child)::after {

@@ -38,5 +38,7 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "google-libphonenumber": "^3.2.38"
+  }
 }
