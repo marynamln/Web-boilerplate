@@ -1780,6 +1780,7 @@ const randomUserMock = [
       timezone: { offset: "+9:30", description: "Adelaide, Darwin" },
     },
     email: "matteo.lecomte@example.com",
+    favorite: true,
     login: {
       uuid: "33c3897b-3b6e-41b5-8f39-db5f243381f1",
       username: "whitemouse281",
@@ -1922,11 +1923,11 @@ function formatUser(user) {
     phone: user.phone,
     picture_large: user.picture.large,
     picture_thumbnail: user.picture.thumbnail,
-    id: user.id?.value || user.id || generateId(), 
+    id: user.id?.value || generateId(), 
     favorite: getRandomFavorite(),
     course: getRandomCourse(),
     bg_color: getRandomColor(),
-    note: "Note",
+    note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla hendrerit, semper sem sed, egestas eros. Cras hendrerit porta lorem sit amet lobortis. Praesent at libero aliquam, placerat elit at, eleifend neque. Duis quis enim commodo, venenatis justo ac, iaculis arcu. Nam scelerisque magna id varius scelerisque. Vivamus tincidunt diam eget tempor condimentum. Nunc rhoncus purus varius ullamcorper interdum.",
   };
 }
 
@@ -1946,7 +1947,7 @@ function mergeUsers(randomUserMock, additionalUsers) {
 }
 
 const result = mergeUsers(formattedUsers, additionalUsers);
-console.log(result);
+// console.log(result);
 
 //=================================== Task 2 =================================================================
 
@@ -1998,35 +1999,35 @@ function validateUsers(users) {
 
 const validationResults = validateUsers(formattedUsers);
 
-validationResults.forEach(result => {
-  console.log(`Користувач: ${result.full_name}`);
-  if (!result.validationResult.isValid) {
-    console.log('Помилки:');
-    result.validationResult.errors.forEach(error => console.log(`- ${error}`));
-  } else {
-    console.log('Дані валідні');
-  }
-  console.log('------------------------');
-});
+// validationResults.forEach(result => {
+//   console.log(`Користувач: ${result.full_name}`);
+//   if (!result.validationResult.isValid) {
+//     console.log('Помилки:');
+//     result.validationResult.errors.forEach(error => console.log(`- ${error}`));
+//   } else {
+//     console.log('Дані валідні');
+//   }
+//   console.log('------------------------');
+// });
 
 //=================================== Task 3 =================================================================
 
 function filterUsers(users, filterParams) {
   return users.filter(user => {
     
-    if (filterParams.country !== undefined && user.country !== filterParams.country) {
+    if (user.country !== filterParams.country) {
       return false;
     }
     
-    if (filterParams.age !== undefined && user.age !== filterParams.age) {
+    if (user.age !== filterParams.age) {
       return false;
     }
     
-    if (filterParams.gender !== undefined && user.gender !== filterParams.gender) {
+    if (user.gender !== filterParams.gender) {
       return false;
     }
     
-    if (filterParams.favorite !== undefined && user.favorite !== filterParams.favorite) {
+    if (user.favorite !== filterParams.favorite) {
       return false;
     }
     
@@ -2042,7 +2043,7 @@ const filterParams = {
 };
 
 const filteredUsers = filterUsers(result, filterParams);
-console.log(filteredUsers);
+// console.log(filteredUsers);
 
 //=================================== Task 4 =================================================================
 
@@ -2072,14 +2073,14 @@ function sortUsers(users, sortBy, direction = 'asc') {
   });
 }
 
-const sortedByNameAsc = sortUsers(formattedUsers, 'full_name', 'desc');
-console.log('Sorted by full_name (desc):', sortedByNameAsc);
+// const sortedByNameAsc = sortUsers(formattedUsers, 'full_name', 'desc');
+// console.log('Sorted by full_name (desc):', sortedByNameAsc);
 
-const sortedByAgeDesc = sortUsers(formattedUsers, 'age', 'desc');
-console.log('Sorted by age (desc):', sortedByAgeDesc);
+// const sortedByAgeDesc = sortUsers(formattedUsers, 'age', 'desc');
+// console.log('Sorted by age (desc):', sortedByAgeDesc);
 
-const sortedByBDayAsc = sortUsers(additionalUsers, 'b_day', 'desc');
-console.log('Sorted by b_day (desc):', sortedByBDayAsc);
+// const sortedByBDayAsc = sortUsers(formattedUsers, 'b_day', 'desc');
+// console.log('Sorted by b_day (desc):', sortedByBDayAsc);
 
 //=================================== Task 5 =================================================================
 
@@ -2106,9 +2107,9 @@ function findUsers(users, searchParam, searchValue, operator = '==') {
   });
 }
 
-console.log(findUsers(formattedUsers, 'full_name', 'Oona'));
-console.log(findUsers(additionalUsers, 'note', 'lady'));
-console.log(findUsers(formattedUsers, 'age', 70, '>'));
+// console.log(findUsers(formattedUsers, 'full_name', 'Oona'));
+// console.log(findUsers(additionalUsers, 'note', 'lady'));
+// console.log(findUsers(formattedUsers, 'age', 70, '>'));
 
 //=================================== Task 6 =================================================================
 
@@ -2120,4 +2121,4 @@ function getMatchingPercentage(users, searchParam, searchValue, operator = '==')
   return percentage;
 }
 
-console.log(getMatchingPercentage(formattedUsers, 'age', 30, '<'));
+//  console.log(getMatchingPercentage(formattedUsers, 'age', 30, '<'));
