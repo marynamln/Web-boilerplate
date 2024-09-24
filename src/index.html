@@ -16,7 +16,7 @@
 
    <body>
 
-      <script type="text/javascript" src="../build/app.js"></script>
+      <script type="text/javascript" src="./js/app.js"></script>
 
       <header class="header">
          <div class="searchPanel">
@@ -58,27 +58,96 @@
                <div class="filter">
                   <label for="selectAge" id="selectLabel">Age</label>
                   <select class="select" id="selectAge">
-                     <option value="18-31" selected>18 - 31</option>
-                     <option value="32-45">32 - 45</option>
-                     <option value="45-55">45 - 55</option>
-                     <option value="55-65">55 - 65</option>
+                     <option value="" selected>Select age</option>
+                     <option value="18-25">18 - 25</option>
+                     <option value="26-35">26 - 35</option>
+                     <option value="36-45">36 - 45</option>
+                     <option value="45-55">46 - 55</option>
+                     <option value="56-65">56 - 65</option>
+                     <option value="66-75">66 - 75</option>
+                     <option value="76-90">76 - 90</option>
                   </select>
                </div>
 
                <div class="filter">
-                  <label for="selectRegion" id="selectLabel">Region</label>
+                  <label for="selectRegion" id="selectLabel">Country</label>
                   <select class="select" id="selectRegion">
-                     <option value="Europe" selected>Europe</option>
-                     <option value="Asia">Asia</option>
-                     <option value="Africa">Africa</option>
+                     <option value="" selected>Select country</option>
+                     <option value="United States">United States</option>                 
                      <option value="Australia">Australia</option>
+                     <option value="Austria">Austria</option>
+                     <option value="Azerbaijan">Azerbaijan</option>
+                     <option value="Belgium">Belgium</option>                  
+                     <option value="Bolivia">Bolivia</option>
+                     <option value="Brazil">Brazil</option>
+                     <option value="Bulgaria">Bulgaria</option>                     
+                     <option value="Canada">Canada</option>
+                     <option value="China">China</option>                     
+                     <option value="Colombia">Colombia</option>                     
+                     <option value="Croatia">Croatia</option>
+                     <option value="Czech Republic">Czech Republic</option>
+                     <option value="Denmark">Denmark</option>
+                     <option value="Dominica">Dominica</option>
+                     <option value="Ecuador">Ecuador</option>
+                     <option value="Egypt">Egypt</option>
+                     <option value="Estonia">Estonia</option>
+                     <option value="Finland">Finland</option>
+                     <option value="France">France</option>                     
+                     <option value="Georgia">Georgia</option>
+                     <option value="Germany">Germany</option>
+                     <option value="Greece">Greece</option>
+                     <option value="Greenland">Greenland</option>
+                     <option value="Haiti">Haiti</option>
+                     <option value="Hong Kong">Hong Kong</option>
+                     <option value="Hungary">Hungary</option>
+                     <option value="Iceland">Iceland</option>
+                     <option value="India">India</option>
+                     <option value="Indonesia">Indonesia</option>
+                     <option value="Ireland">Ireland</option>
+                     <option value="Israel">Israel</option>
+                     <option value="Italy">Italy</option>
+                     <option value="Japan">Japan</option>
+                     <option value="Kazakhstan">Kazakhstan</option>                     
+                     <option value="Korea">Korea, Republic of</option>
+                     <option value="Latvia">Latvia</option>   
+                     <option value="Mexico">Mexico</option>
+                     <option value="Moldova">Moldova</option>
+                     <option value="Monaco">Monaco</option>
+                     <option value="Morocco">Morocco</option>
+                     <option value="Netherlands">Netherlands</option>
+                     <option value="New Zealand">New Zealand</option>
+                     <option value="Norway">Norway</option>
+                     <option value="Oman">Oman</option>
+                     <option value="Panama">Panama</option>
+                     <option value="Peru">Peru</option>
+                     <option value="Philippines">Philippines</option>
+                     <option value="Poland">Poland</option>
+                     <option value="Portugal">Portugal</option>
+                     <option value="Qatar">Qatar</option>
+                     <option value="Romania">Romania</option>
+                     <option value="Singapore">Singapore</option>
+                     <option value="Slovakia">Slovakia</option>
+                     <option value="Slovenia">Slovenia</option>
+                     <option value="Span">Spain</option>
+                     <option value="Sweden">Sweden</option>
+                     <option value="Switzerland">Switzerland</option>
+                     <option value="Thailand">Thailand</option>
+                     <option value="Turkey">Turkey</option>
+                     <option value="Ukraine">Ukraine</option>
+                     <option value="United Kingdom">United Kingdom</option>
+                     <option value="Venezuela">Venezuela</option>
+                     <option value="Yemen">Yemen</option>
+                     <option value="Serbia">Serbia</option>
+                     <option value="Zambia">Zambia</option>
+                     <option value="Zimbabwe">Zimbabwe</option>
                   </select>
                </div>
 
                <div class="filter">
                   <label for="selectSex" id="selectLabel">Sex</label>
                   <select class="select" id="selectSex">
-                     <option value="male" selected>Male</option>
+                     <option value="" selected>Select sex</option>
+                     <option value="male">Male</option>
                      <option value="female">Female</option>
                   </select>
                </div>
@@ -97,104 +166,6 @@
 
          <section class="section" id="topTeachersList">
             <ul class="teachers">
-
-               <li class="teacherCard">
-                  <div class="avatar">
-                     <div class="avatarImg">
-                        <img src="\images\1.jpg" alt="J.D">
-                        <div class="initials">J.D</div>
-                     </div>
-                  </div>
-                  <h3 class="teachersName">John<br>Doe</h3>
-                  <h4 class="teachersSpeciality">Chemistry</h4>
-                  <h5 class="teachersCountry">USA</h5>
-               </li>
-
-               <li class="teacherCard">
-                  <div class="avatar">
-                     <div class="avatarImg">
-                        <img src="\images\3.jpg" alt="A.S">
-                        <div class="initials">A.S</div>
-                     </div>
-                  </div>
-                  <h3 class="teachersName">Anna<br>Smith</h3>
-                  <h4 class="teachersSpeciality">Physics</h4>
-                  <h5 class="teachersCountry">UK</h5>
-               </li>
-
-               <li class="teacherCard" id="stared">
-                  <div class="avatar">
-                     <div class="avatarImg">
-                        <img src="\images\4.jpg" alt="E.J">
-                        <div class="initials">E.J</div>
-                     </div>
-                     <span class="star">★</span>
-                  </div>
-                  <h3 class="teachersName">Emily<br>Johnson</h3>
-                  <h4 class="teachersSpeciality">Math</h4>
-                  <h5 class="teachersCountry">Canada</h5>
-               </li>
-
-               <li class="teacherCard">
-                  <div class="avatar">
-                     <div class="avatarImg">
-                        <img src="\images\5.jpg" alt="S.F">
-                        <div class="initials">S.F</div>
-                     </div>
-                  </div>
-                  <h3 class="teachersName">Sofia<br>Fernandez</h3>
-                  <h4 class="teachersSpeciality">Art</h4>
-                  <h5 class="teachersCountry">Argentina</h5>
-               </li>
-
-               <li class="teacherCard" id="stared">
-                  <div class="avatar">
-                     <div class="avatarImg">
-                        <img src="\images\2.jpg" alt="K.P">
-                        <div class="initials">K.P</div>
-                     </div>
-                     <span class="star">★</span>
-                  </div>
-                  <h3 class="teachersName">Kumar<br>Patel</h3>
-                  <h4 class="teachersSpeciality">Biology</h4>
-                  <h5 class="teachersCountry">India</h5>
-               </li>
-
-               <li class="teacherCard">
-                  <div class="avatar">
-                     <div class="avatarImg">
-                        <img src="\images\6.jpg" alt="M.G">
-                        <div class="initials">M.G</div>
-                     </div>
-                  </div>
-                  <h3 class="teachersName">Maria<br>Garcia</h3>
-                  <h4 class="teachersSpeciality">Art</h4>
-                  <h5 class="teachersCountry">Spain</h5>
-               </li>
-
-               <li class="teacherCard">
-                  <div class="avatar">
-                     <div class="avatarImg">
-                        <img src="" alt="L.W">
-                        <div class="initials">L.W</div>
-                     </div>
-                  </div>
-                  <h3 class="teachersName">Li<br>Wei</h3>
-                  <h4 class="teachersSpeciality">English</h4>
-                  <h5 class="teachersCountry">China</h5>
-               </li>
-
-               <li class="teacherCard">
-                  <div class="avatar">
-                     <div class="avatarImg">
-                        <img src="" alt="Y.A">
-                        <div class="initials">Y.A</div>
-                     </div>
-                  </div>
-                  <h3 class="teachersName">Yusuf<br>Ali</h3>
-                  <h4 class="teachersSpeciality">Computer Science</h4>
-                  <h5 class="teachersCountry">Turkey</h5>
-               </li>
             </ul>
          </section>
 
@@ -208,93 +179,18 @@
                   <table class="table">
                      <thead>
                         <tr>
-                           <th class="t-name" id="t-title">Name</th>
-                           <th>Speciality</th>
-                           <th>Age</th>
+                           <th class="t-name" id="t-title">Name</th>                           
+                           <th id="t-speciality">Speciality</th>
+                           <th id="t-age">Age</th>
                            <th>Gender</th>
-                           <th>Nationality</th>
+                           <th id="t-country">Nationality</th>
                         </tr>
                      </thead>
                      <tbody>
-                        <tr>
-                           <td class="t-name">John Doe</td>
-                           <td class="t-speciality">Chemistry</td>
-                           <td class="t-age">29</td>
-                           <td class="t-gender">Male</td>
-                           <td class="t-nationality">USA</td>
-                       </tr>
-                       <tr>
-                           <td class="t-name">Anna Smith</td>
-                           <td class="t-speciality">Physics</td>
-                           <td class="t-age">25</td>
-                           <td class="t-gender">Female</td>
-                           <td class="t-nationality">UK</td>
-                       </tr>
-                       <tr>
-                           <td class="t-name">Li Wei</td>
-                           <td class="t-speciality">English</td>
-                           <td class="t-age">32</td>
-                           <td class="t-gender">Male</td>
-                           <td class="t-nationality">China</td>
-                       </tr>
-                       <tr>
-                           <td class="t-name">Maria Garcia</td>
-                           <td class="t-speciality">Art</td>
-                           <td class="t-age">40</td>
-                           <td class="t-gender">Female</td>
-                           <td class="t-nationality">Spain</td>
-                       </tr>
-                       <tr>
-                           <td class="t-name">Yusuf Ali</td>
-                           <td class="t-speciality">Computer Science</td>
-                           <td class="t-age">35</td>
-                           <td class="t-gender">Male</td>
-                           <td class="t-nationality">Turkey</td>
-                       </tr>
-                       <tr>
-                           <td class="t-name">Emily Johnson</td>
-                           <td class="t-speciality">Math</td>
-                           <td class="t-age">28</td>
-                           <td class="t-gender">Female</td>
-                           <td class="t-nationality">Canada</td>
-                       </tr>
-                       <tr>
-                           <td class="t-name">David Brown</td>
-                           <td class="t-speciality">Statistics</td>
-                           <td class="t-age">45</td>
-                           <td class="t-gender">Male</td>
-                           <td class="t-nationality">Australia</td>
-                       </tr>
-                       <tr>
-                           <td class="t-name">Sofia Fernandez</td>
-                           <td class="t-speciality">Art</td>
-                           <td class="t-age">30</td>
-                           <td class="t-gender">Female</td>
-                           <td class="t-nationality">Argentina</td>
-                       </tr>
-                       <tr>
-                           <td class="t-name">Kumar Patel</td>
-                           <td class="t-speciality">Biology</td>
-                           <td class="t-age">37</td>
-                           <td class="t-gender">Male</td>
-                           <td class="t-nationality">India</td>
-                       </tr>
-                       <tr>
-                           <td class="t-name">Maryna Melnyk</td>
-                           <td class="t-speciality">IT</td>
-                           <td class="t-age">18</td>
-                           <td class="t-gender">Female</td>
-                           <td class="t-nationality">Ukraine</td>
-                       </tr>
                      </tbody>
                   </table>
 
                   <div class="pagination">
-                     <a href="" class="page-link" id="first">1</a>
-                     <a href="" class="page-link">2</a>
-                     <a href="" class="page-link">3</a>
-                     <span class="dots">...</span>
-                     <a href="" class="page-link">Last</a>
                  </div>
                </div>
             </div>
@@ -309,65 +205,8 @@
                   <div class="sliderPrev">
                      <button class="prevBtn">⟨</button>
                   </div>
-
                   <div class="sliderBody">
-                     <ul class="teachers" id="favoriteTeachersList">
-                        <li class="teacherCardFavorite">
-                           <div class="avatar">
-                              <div class="avatarImg">
-                                 <img src="\images\1.jpg" alt="J.D">
-                                 <div class="initials">J.D</div>
-                              </div>
-                           </div>
-                           <h3 class="teachersName">John<br>Doe</h3>
-                           <h5 class="teachersCountry">USA</h5>
-                        </li>
-         
-                        <li class="teacherCardFavorite">
-                           <div class="avatar">
-                              <div class="avatarImg">
-                                 <img src="\images\3.jpg" alt="A.S">
-                                 <div class="initials">A.S</div>
-                              </div>
-                           </div>
-                           <h3 class="teachersName">Anna<br>Smith</h3>
-                           <h5 class="teachersCountry">UK</h5>
-                        </li>
-         
-                        <li class="teacherCardFavorite">
-                           <div class="avatar">
-                              <div class="avatarImg">
-                                 <img src="\images\4.jpg" alt="E.J">
-                                 <div class="initials">E.J</div>
-                              </div>
-                           </div>
-                           <h3 class="teachersName">Emily<br>Johnson</h3>
-                           <h5 class="teachersCountry">Canada</h5>
-                        </li>
-         
-                        <li class="teacherCardFavorite">
-                           <div class="avatar">
-                              <div class="avatarImg">
-                                 <img src="\images\5.jpg" alt="S.F">
-                                 <div class="initials">S.F</div>
-                              </div>
-                           </div>
-                           <h3 class="teachersName">Sofia<br>Fernandez</h3>
-                           <h5 class="teachersCountry">Argentina</h5>
-                        </li>
-         
-                        <li class="teacherCardFavorite">
-                           <div class="avatar">
-                              <div class="avatarImg">
-                                 <img src="\images\2.jpg" alt="K.P">
-                                 <div class="initials">K.P</div>
-                              </div>
-                           </div>
-                           <h3 class="teachersName">Kumar<br>Patel</h3>
-                           <h5 class="teachersCountry">India</h5>
-                        </li>
-
-                     </ul>
+                     <ul class="teachers" id="favoriteTeachersList"></ul>
                   </div>
                   <div class="sliderNext">
                      <button class="nextBtn">⟩</button>
@@ -434,10 +273,19 @@
                <div class="formItem">
                   <label for="formSpeciality" class="formLabel">Speciality</label>
                   <select id="formSpeciality" class="formInput">
-                     <option value="Mathematics" selected>Mathematics</option>
+                     <option value="" selected>Course</option>
+                     <option value="Mathematics">Mathematics</option>
+                     <option value="Physics">Physics</option>
                      <option value="Biology">Biology</option>
                      <option value="Art">Art</option>
-                     <option value="Physics">Physics</option>
+                     <option value="English">English</option>
+                     <option value="Computer Science">Computer Science</option>
+                     <option value="Dancing">Dancing</option>
+                     <option value="Chess">Chess</option>
+                     <option value="Chemistry">Chemistry</option>
+                     <option value="Law">Law</option>
+                     <option value="Medicine">Medicine</option>
+                     <option value="Statistics">Statistics</option>
                   </select>
                </div>
 
@@ -445,10 +293,75 @@
                   <div class="formItem">
                      <label for="formCountry" class="formLabel">Country</label>
                      <select id="formCountry" class="formInput">
-                        <option value="Ukraine" selected>Ukraine</option>
-                        <option value="USA">USA</option>
+                        
+                        <option value="" selected>Country</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="United States">United States</option>                 
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Belgium">Belgium</option>                  
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Bulgaria">Bulgaria</option>                     
                         <option value="Canada">Canada</option>
-                        <option value="Spain">Spain</option>
+                        <option value="China">China</option>                     
+                        <option value="Colombia">Colombia</option>                     
+                        <option value="Croatia">Croatia</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Dominica">Dominica</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>                     
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Greenland">Greenland</option>
+                        <option value="Haiti">Haiti</option>
+                        <option value="Hong Kong">Hong Kong</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="India">India</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Kazakhstan">Kazakhstan</option>                     
+                        <option value="Korea">Korea, Republic of</option>
+                        <option value="Latvia">Latvia</option>   
+                        <option value="Mexico">Mexico</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Span">Spain</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
                      </select>
                   </div>
                   <div class="formItem">
@@ -475,9 +388,10 @@
                   
                   <div class="radioGroup">
                      <label for="formSexMale" class="radioLabel">Male</label>
-                     <input id="formSexMale" class="radioInput" type="radio" value="Male"> 
+                     <input id="formSexMale" class="radioInput" type="radio" name="sex" value="Male"> 
+                     
                      <label for="formSexFemale" class="radioLabel">Female</label>
-                     <input id="formSexFemale" class="radioInput" type="radio" value="Female">
+                     <input id="formSexFemale" class="radioInput" type="radio" name="sex" value="Female">
                   </div>
                    
                </div>
@@ -487,7 +401,7 @@
                </div>
                <div class="formItem" id="notes">
                   <label for="formNotes" class="formLabel">Notes (optional)</label>
-                  <input id="formNotes" class="formInput" type="text">
+                  <textarea id="formNotes" class="formInput"></textarea>
                </div>
 
                <button class="formButton">Add</button>
@@ -505,59 +419,28 @@
 
             <div class="topInfo">
                
-               <img class="teacherPhoto" src="\images\1.jpg" alt="J.D">               
+               <img class="teacherPhoto" src="" alt="">               
    
                <div class="teacherInformation">
-                  <h1 class="teacherName">John Doe</h1>
-                  <h2 class="teacherSpeciality">Chemistry</h2>
-                  <span class="teacherCountry">USA</span>
-                  <span class="teacherAge">29, Male</span>
-                  <a class="teacherEmail" href="">johndoe@gmail.com</a>
-                  <span class="teacherTel">+1234567890</span>
+                  <h1 class="teacherName"></h1>
+                  <h2 class="teacherSpeciality"></h2>
+                  <span class="teacherCountry"></span>
+                  <span class="teacherAge"></span>
+                  <a class="teacherEmail" href=""></a>
+                  <span class="teacherTel"></span>
                </div>
 
-               <button class="t-star">☆</button>
+               <button class="t-star"></button>
             </div>
             
             <div class="bottomInfo">
-               <span class="infoDescription">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla hendrerit, semper sem sed, egestas eros. Cras hendrerit porta lorem sit amet lobortis. Praesent at libero aliquam, placerat elit at, eleifend neque. Duis quis enim commodo, venenatis justo ac, iaculis arcu. Nam scelerisque magna id varius scelerisque. Vivamus tincidunt diam eget tempor condimentum. Nunc rhoncus purus varius ullamcorper interdum.
-               </span>
+               <span class="infoDescription"></span>
    
                <a class="map" href="">toggle map</a>
             </div>
             
          </div>
       </dialog>
-      
-      <script>
-         const addTeacherButton = document.querySelector('.addTeacherButton');
-         const createTeacherDialog = document.querySelector('#createTeacher');
-         const closeButton = document.querySelector('.close');
-      
-         addTeacherButton.addEventListener('click', () => {
-            createTeacherDialog.showModal();
-         });
-      
-         closeButton.addEventListener('click', () => {
-            createTeacherDialog.close();
-         });
-      </script>
-
-      <script>
-         const teacherCard = document.querySelector('.teacherCard');
-         const infoTeacherDialog = document.querySelector('#infoTeacher');
-         const closeInfoButton = document.querySelector('.closeInfo');
-
-         teacherCard.addEventListener('click', () => {
-            infoTeacherDialog.showModal();
-         });
-
-         closeInfoButton.addEventListener('click', () => {
-            infoTeacherDialog.close();
-         });
-
-      </script>
 
   </body>
 </html>
