@@ -1,0 +1,36 @@
+{
+  "teachers": [
+    {
+      "id": "f658",
+      "full_name": "Maryna Melnyk",
+      "course": "Computer Science",
+      "country": "Ukraine",
+      "city": "Lutsk",
+      "email": "melnikm535@gmail.com",
+      "phone": "0661724934",
+      "b_day": "2000-11-11",
+      "age": 23,
+      "gender": "Female",
+      "bg_color": "#000000",
+      "note": "",
+      "picture_large": "",
+      "favorite": false
+    },
+    {
+      "id": "b331",
+      "full_name": "John Doe",
+      "course": "Law",
+      "country": "United Kingdom",
+      "city": "London",
+      "email": "jd@com",
+      "phone": "0987654321",
+      "b_day": "1995-09-20",
+      "age": 29,
+      "gender": "Male",
+      "bg_color": "#1fdb35",
+      "note": "",
+      "picture_large": "",
+      "favorite": false
+    }
+  ]
+}

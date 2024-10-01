@@ -121,7 +121,7 @@ body {
     color: rgb(207, 69, 48);
 }
 
-.addTeacherButton, .searchButton {
+.addTeacherButton, .searchButton, .nextButton {
     background-color: white; 
     color: rgb(246,99,78); 
     border: 2px solid rgb(246,99,78); 
@@ -132,9 +132,15 @@ body {
     font-weight: bold;
 }
 
-.addTeacherButton:hover, .searchButton:hover, .formButton:hover {
+.addTeacherButton:hover, .searchButton:hover, .formButton:hover, .nextButton:hover {
     background-color: rgb(246,99,78);
     color: white; 
+}
+
+.nextButton {
+    height: 50px;
+    width: 170px;
+    font-size: 20px;
 }
 
 .searchButton{
@@ -430,7 +436,7 @@ th:hover::after {
     flex: 1;
     margin: 0;
     padding-left: 30px;
-    scrollbar-width: thin;
+    scrollbar-width: none;
     transition: transform 0.5s ease;
   }
   
