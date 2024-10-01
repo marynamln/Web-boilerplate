@@ -1,6 +1,6 @@
 const testModules = require('./test-module');
 require('../css/app.css');
-import { teachers } from './test-module.js';
+//import { teachers } from './test-module.js';
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -12,16 +12,78 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeInfoButton = dialogTeacherInfo.querySelector('.closeInfo');
   const starInfoButton = dialogTeacherInfo.querySelector('.t-star');
   let currentTeacher;
+  let teachers = [];
 
-  teachers.forEach(teacher => {
-    const teacherCard = createTeacherCard(teacher);
-    teacherList.appendChild(teacherCard);
+  // teachers.forEach(teacher => {
+  //   const teacherCard = createTeacherCard(teacher);
+  //   teacherList.appendChild(teacherCard);
 
-    if(teacher.favorite){
-      const favoriteTeacherCard = createFavoriteTeacherCard(teacher);
-      favoriteTeacherList.appendChild(favoriteTeacherCard);
+  //   if(teacher.favorite){
+  //     const favoriteTeacherCard = createFavoriteTeacherCard(teacher);
+  //     favoriteTeacherList.appendChild(favoriteTeacherCard);
+  //   }
+  // });
+
+  fetch('https://randomuser.me/api/?results=50')
+    .then(response => response.json())
+    .then(data => {
+      teachers = data.results.map(user => ({
+        full_name: `${user.name.first} ${user.name.last}`,
+        picture_large: user.picture.large,
+        course: getRandomCourse(),
+        country: user.location.country,
+        age: user.dob.age,
+        gender: capitalize(user.gender),
+        email: user.email,
+        phone: user.phone,
+        favorite: getRandomFavorite(), 
+        bg_color: getRandomColor(), 
+        note: "No additional information"
+    }));
+
+    teachers.forEach(teacher => {
+      const teacherCard = createTeacherCard(teacher);
+      teacherList.appendChild(teacherCard);
+
+      if(teacher.favorite){
+        const favoriteTeacherCard = createFavoriteTeacherCard(teacher);
+        favoriteTeacherList.appendChild(favoriteTeacherCard);
+      }
+    });
+
+    fillTablePaginated(teachers, currentPage);
+    setupPagination(teachers);
+    setupSorting();
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+  function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  }
+
+  function getRandomCourse() {
+    const courses = [
+      "Mathematics", "Physics", "English", "Computer Science", "Dancing", 
+      "Chess", "Biology", "Chemistry", "Law", "Art", "Medicine", "Statistics"
+    ];
+    return courses[Math.floor(Math.random() * courses.length)];
+  }
+
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
     }
-  });
+    return color;
+  }
+
+  function getRandomFavorite() {
+    const favorite = [
+      true, false
+    ];
+    return favorite[Math.floor(Math.random() * favorite.length)];
+  }
 
   function createTeacherCard(teacher) {
     const techerCard = document.createElement('li');
@@ -33,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     techerCard.innerHTML = `
       <div class="avatar">
-        <div class="avatarImg">
+        <div class="avatarImg" style="border-color: ${teacher.bg_color};">
           <img src="${teacher.picture_large}" alt="${teacher.full_name[0]}${teacher.full_name.split(' ')[1][0]}">
           <div class="initials">${teacher.full_name[0]}${teacher.full_name.split(' ')[1][0]}</div>
         </div>
@@ -71,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     favoriteTeacherCard.innerHTML = `
       <div class="avatar">
-        <div class="avatarImg">
+        <div class="avatarImg" style="border-color: ${teacher.bg_color};">
           <img src="${teacher.picture_large}" alt="${teacher.full_name[0]}${teacher.full_name.split(' ')[1][0]}">
           <div class="initials">${teacher.full_name[0]}${teacher.full_name.split(' ')[1][0]}</div>
         </div>
@@ -126,21 +188,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         starSpan.textContent = '★';
         teacherCard.id = 'stared';
-  
-        const favoriteTeacherCard = document.createElement('li');
-        favoriteTeacherCard.classList.add('teacherCardFavorite');
 
-        favoriteTeacherCard.innerHTML = `
-          <div class="avatar">
-            <div class="avatarImg">
-              <img src="${currentTeacher.picture_large}" alt="${currentTeacher.full_name[0]}${currentTeacher.full_name.split(' ')[1][0]}">
-              <div class="initials">${currentTeacher.full_name[0]}${currentTeacher.full_name.split(' ')[1][0]}</div>
-            </div>
-          </div>
-          <h3 class="teachersName">${currentTeacher.full_name.split(' ')[0]}<br>${currentTeacher.full_name.split(' ')[1]}</h3>
-          <h5 class="teachersCountry">${currentTeacher.country}</h5>
-        `;
-
+        const favoriteTeacherCard = createFavoriteTeacherCard(currentTeacher);
         favoriteTeacherList.appendChild(favoriteTeacherCard);
 
       } else {
@@ -209,6 +258,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const teacherCard = createTeacherCard(teacher);
         teacherList.appendChild(teacherCard);
     });
+
+    fillTablePaginated(filteredTeachers, currentPage);
+    setupPagination(filteredTeachers);
   }
   
   function checkAgeRange(age, range) {
@@ -251,6 +303,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const teacherCard = createTeacherCard(teacher);
         teacherList.appendChild(teacherCard);
       });
+
+      fillTablePaginated(filteredTeachers, currentPage);
+      setupPagination(filteredTeachers);
+
   }
     
     function checkAge(age, condition) {
@@ -279,9 +335,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const rowsPerPage = 10;
   let currentSort = { field: '', direction: 'asc' };
 
-  fillTablePaginated(teachers, currentPage);
-  setupPagination(teachers);
-  setupSorting();
+  // fillTablePaginated(teachers, currentPage);
+  // setupPagination(teachers);
+  // setupSorting();
 
   function fillTablePaginated(teachers, page) {
     const tableBody = document.querySelector('.statisticsTable tbody');
@@ -304,8 +360,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  const paginationContainer = document.querySelector('.pagination');
+
   function setupPagination(teachers) {
-    const paginationContainer = document.querySelector('.pagination');
     paginationContainer.innerHTML = "";
 
     const totalPages = Math.ceil(teachers.length / rowsPerPage);
@@ -353,6 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fillTablePaginated(teachers, currentPage);
         setupPagination(teachers);
     });
+
     paginationContainer.appendChild(lastPageLink);
   }
 
@@ -398,6 +456,52 @@ document.addEventListener('DOMContentLoaded', function () {
     setupPagination(sortedTeachers);
   }
 
+// ================================================ load more =================================================================
+  const nextTeachers = document.querySelector('.nextButton');
+
+  nextTeachers.addEventListener('click', function(e) {
+    e.preventDefault();
+    fetchMoreUsers();
+  });
+
+  function fetchMoreUsers() {
+    fetch('https://randomuser.me/api/?results=10')
+      .then(response => response.json())
+      .then(data => {
+        const newTeachers = data.results.map(user => ({
+          full_name: `${user.name.first} ${user.name.last}`,
+          picture_large: user.picture.large,
+          course: getRandomCourse(),
+          country: user.location.country,
+          age: user.dob.age,
+          gender: capitalize(user.gender),
+          email: user.email,
+          phone: user.phone,
+          favorite: getRandomFavorite(),
+          bg_color: getRandomColor(),
+          note: "No additional information"
+        }));
+  
+        teachers = [...teachers, ...newTeachers];
+  
+        fillTablePaginated(teachers, currentPage);
+  
+        newTeachers.forEach(teacher => {
+          const teacherCard = createTeacherCard(teacher);
+          teacherList.appendChild(teacherCard);
+  
+          if(teacher.favorite) {
+            const favoriteTeacherCard = createFavoriteTeacherCard(teacher);
+            favoriteTeacherList.appendChild(favoriteTeacherCard);
+          }
+        });
+  
+        setupPagination(teachers);
+      })
+      .catch(error => console.error('Error fetching more users:', error));
+  }
+  
+
 // ================================================ add teacher ===============================================================
 
   const addTeacherButtons = document.querySelectorAll('.addTeacherButton'); 
@@ -414,7 +518,7 @@ document.addEventListener('DOMContentLoaded', function () {
       createTeacherDialog.close();
   });
 
-  document.querySelector('.formButton').addEventListener('click', function(e) {
+  document.querySelector('.form').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const name = document.getElementById('formName').value.trim();
@@ -449,29 +553,51 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
+    const formattedName = name.split(' ').map(part => part.charAt(0).toUpperCase() + part.slice(1).toLocaleLowerCase()).join(' ');
+    const formattedCity = city.charAt(0).toUpperCase() + city.slice(1).toLocaleLowerCase();
+
     const newTeacher = {
-        full_name: name,
+        full_name: formattedName,
         course: speciality,
         country: country,
-        city: city,
+        city: formattedCity,
         email: email,
         phone: phone,
         b_day: dob,
         age: calculateAge(dob),
         gender: gender,
-        bg_color: backgroundColor,
+        bg_color: backgroundColor || 'rgb(246,99,78)',
         note: notes,
         picture_large: '',
         favorite: false
     };
 
-    teachers.push(newTeacher);
-    updateTeacherList();
+    // teachers.push(newTeacher);
+    // updateTeacherList();
 
-    fillTablePaginated(teachers, currentPage);
-    setupPagination(teachers);
+    // fillTablePaginated(teachers, currentPage);
+    // setupPagination(teachers);
 
-    document.querySelector('.form').reset();
+    // document.querySelector('.form').reset();
+
+    fetch('http://localhost:3000/teachers', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newTeacher)
+    })
+    .then(response => response.json())
+    .then(data => {
+        teachers.push(data);
+        updateTeacherList();
+
+        fillTablePaginated(teachers, currentPage);
+        setupPagination(teachers);
+
+        document.querySelector('.form').reset();
+    })
+    .catch(error => console.error('Error:', error));
   });
 
   function calculateAge(birthDate) {
