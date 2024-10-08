@@ -654,9 +654,11 @@ th:hover::after {
 }
 
 #infoTeacher {
-    width: 700px;
-    height: 350px;
+    width: 725px;
+    height: 400px;
     align-items: flex-start;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
 }
 
 .information {
@@ -698,7 +700,8 @@ th:hover::after {
 }
 
 .teacherCountry, .teacherAge,
-.teacherEmail, .teacherTel {
+.teacherEmail, .teacherTel, 
+.teacherDaysToBrth, .teacherDob {
     font-size: 12px;
     margin-bottom: 10px;
 }
@@ -719,6 +722,14 @@ th:hover::after {
 .map {
     margin: 0 0 0 10px;
     text-decoration-style: dotted;
+}
+
+#map {
+    margin: 10px 0 0 10px;
+    padding-right: 10px;
+    height: 300px;
+    width: 690px;
+    display: none;
 }
 
 .map, .teacherEmail {
@@ -884,4 +895,22 @@ dialog::backdrop {
 
 #notes {
     margin-top: 5px;
+}
+
+#charts {
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;  
+    gap: 100px;      
+    margin-bottom: 50px;
+}
+
+canvas {
+    width: 400px !important;
+    height: 400px !important;
+}
+
+#countryChart,
+#subjectChart {
+    width: 600px !important;
 }

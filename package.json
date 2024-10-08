@@ -41,6 +41,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "google-libphonenumber": "^3.2.38"
+    "chart.js": "^4.4.4",
+    "dayjs": "^1.11.13",
+    "google-libphonenumber": "^3.2.38",
+    "leaflet": "^1.9.4",
+    "lodash": "^4.17.21"
   }
 }

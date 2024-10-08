@@ -12,6 +12,23 @@
 
       <link rel="stylesheet" href="./css/app.css">
 
+      <!-- <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
+      <script src="../node_modules/leaflet/dist/leaflet.js"></script> -->
+
+      <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> -->
+
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+               integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+               crossorigin=""></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
    </head>
 
    <body>
@@ -196,6 +213,16 @@
                </div>
             </div>
          </section>
+
+         <section class="section" id="charts">
+            <canvas id="teachersChart"></canvas>
+            <canvas id="countryChart"></canvas>
+        </section>    
+        
+        <section class="section" id="charts">
+         <canvas id="ageChart"></canvas>
+         <canvas id="subjectChart"></canvas>
+     </section>    
 
          <section class="section" id="favorites">
             <div class="line"></div>
@@ -429,6 +456,8 @@
                   <span class="teacherAge"></span>
                   <a class="teacherEmail" href=""></a>
                   <span class="teacherTel"></span>
+                  <span class="teacherDob"></span>
+                  <span class="teacherDaysToBrth"></span>
                </div>
 
                <button class="t-star"></button>
@@ -437,7 +466,8 @@
             <div class="bottomInfo">
                <span class="infoDescription"></span>
    
-               <a class="map" href="">toggle map</a>
+               <a class="map" href="#">toggle map</a>
+               <div id="map"></div>
             </div>
             
          </div>
